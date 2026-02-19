@@ -1,0 +1,252 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b1220;
+    color: #e5e7eb;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    border-bottom: 1px solid #1f2937;
+}
+
+.logo {
+    font-weight: bold;
+    color: #ef4444;
+    letter-spacing: 2px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: red;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.subtitle {
+    margin-left: 15px;
+    color: #9ca3af;
+}
+
+/* LAYOUT */
+.main-container {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+.graph-section {
+    flex: 3;
+    border-right: 1px solid #1f2937;
+}
+
+/* GRAPH ANIMATION */
+#network {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: scale(0.95);
+    filter: blur(6px);
+    transition: opacity 0.7s ease,
+                transform 0.7s ease,
+                filter 0.7s ease;
+}
+
+#network.active {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+}
+
+/* SIDE PANEL */
+.side-panel {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* KPI */
+.kpi-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.kpi {
+    background: #111827;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.kpi-number {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.kpi-label {
+    font-size: 11px;
+    color: #9ca3af;
+}
+
+.kpi.red .kpi-number { color: #ef4444; }
+.kpi.orange .kpi-number { color: #f59e0b; }
+.kpi.blue .kpi-number { color: #3b82f6; }
+
+/* PANELS */
+.panel {
+    background: #111827;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.scroll {
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* BUTTONS */
+button {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.analyze-btn {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+}
+
+.analyze-btn:hover {
+    transform: translateY(-2px);
+}
+
+.download-btn {
+    background: linear-gradient(135deg, #059669, #047857);
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    color: white;
+    margin-top: 10px;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* UPLOAD */
+.upload-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.upload-box input[type="file"] {
+    display: none;
+}
+
+.file-label {
+    background: #1f2937;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #374151;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+}
+
+.file-label:hover {
+    background: #334155;
+}
+
+/* NETFLIX LOADER */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.loader-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.loader-text {
+    font-size: 26px;
+    letter-spacing: 3px;
+    color: #e50914;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.loader-bar {
+    width: 200px;
+    height: 4px;
+    background: #222;
+    overflow: hidden;
+    position: relative;
+}
+
+.loader-bar::before {
+    content: "";
+    position: absolute;
+    left: -40%;
+    width: 40%;
+    height: 100%;
+    background: #e50914;
+    animation: netflixLoad 1.2s infinite;
+}
+
+@keyframes netflixLoad {
+    0% { left: -40%; }
+    100% { left: 100%; }
+}
+/* =========================
+   LIGHT THEME
+========================= */
+
+body.light {
+    background: #f4f4f4;
+    color: #111;
+}
+
+body.light .header {
+    border-bottom: 1px solid #ddd;
+}
+
+body.light .graph-section {
+    border-right: 1px solid #ddd;
+}
+
+body.light .kpi,
+body.light .panel {
+    background: #ffffff;
+    color: #111;
+    border: 1px solid #ddd;
+}
+
+body.light .file-label {
+    background: #e5e7eb;
+    color: #111;
+}

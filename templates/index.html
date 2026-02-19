@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FinForensics - Money Muling Detection</title>
+
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="header">
+    <div class="logo">
+        <span class="dot"></span>
+        FINFORENSICS
+    </div>
+    <div class="subtitle">Money Muling Detection Engine</div>
+
+    <!-- THEME TOGGLE BUTTON (ADDED ONLY THIS) -->
+    <button id="themeToggle"
+        style="margin-left:auto;background:none;border:none;color:inherit;font-size:18px;cursor:pointer;">
+        🌙
+    </button>
+</div>
+
+<div class="main-container">
+
+    <div class="graph-section">
+        <div id="network"></div>
+    </div>
+
+    <div class="side-panel">
+
+        <div class="kpi-container">
+            <div class="kpi">
+                <div class="kpi-number" id="accounts">0</div>
+                <div class="kpi-label">Accounts</div>
+            </div>
+            <div class="kpi red">
+                <div class="kpi-number" id="suspicious">0</div>
+                <div class="kpi-label">Suspicious</div>
+            </div>
+            <div class="kpi orange">
+                <div class="kpi-number" id="rings">0</div>
+                <div class="kpi-label">Fraud Rings</div>
+            </div>
+            <div class="kpi blue">
+                <div class="kpi-number" id="time">0</div>
+                <div class="kpi-label">Seconds</div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h3>Selected Account</h3>
+            <div id="selectedAccount">Click a node</div>
+        </div>
+
+        <div class="panel scroll">
+            <h3>Detected Fraud Rings</h3>
+            <div id="ringList"></div>
+        </div>
+
+        <button id="downloadBtn" class="download-btn">
+            ⬇ Download JSON Report
+        </button>
+
+        <form id="uploadForm" enctype="multipart/form-data" class="upload-box">
+            <label class="file-label">
+                <input type="file" name="file" id="fileInput" required>
+                <span id="fileName">Choose CSV File</span>
+            </label>
+
+            <button type="submit" class="analyze-btn">
+                Analyze
+            </button>
+        </form>
+
+    </div>
+
+</div>
+
+<!-- NETFLIX STYLE LOADER -->
+<div id="netflixLoader" class="loader-overlay">
+    <div class="loader-logo">
+        <span class="loader-text">FINFORENSICS</span>
+        <div class="loader-bar"></div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
