@@ -70,7 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
         e.preventDefault();
 
         showLoader();
-        document.querySelector(".hero-text").classList.add("hidden");
 
         const formData = new FormData(this);
 
