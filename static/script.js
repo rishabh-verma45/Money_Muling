@@ -244,25 +244,6 @@ document.addEventListener("DOMContentLoaded", function () {
             container.appendChild(div);
         });
     }
-    // Hide floating text when network is rendered
-    function hideFloatingText() {
-        const floatingText = document.getElementById('floatingText');
-        if (floatingText) {
-            floatingText.classList.add('hidden');
-        }
-    }
-
-// Show floating text when clearing the graph
-    function showFloatingText() {
-        const floatingText = document.getElementById('floatingText');
-        if (floatingText) {
-            floatingText.classList.remove('hidden');
-        }
-    }
-
-// Call hideFloatingText() after your network renders
-// Add this in your existing network rendering code:
-// hideFloatingText();
 
     document.getElementById("downloadBtn").addEventListener("click", function () {
         window.location.href = "/download";
