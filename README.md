@@ -96,9 +96,5 @@ Every account is assigned a risk-based **Suspicion Score** (0-100) based on dete
 
 ---
 
-## 👥 Team Members
-
-* **Rishabh Verma** - Lead Developer & Algorithm Design 🚀
-
 ---
 Developed for financial integrity. ✨💬
