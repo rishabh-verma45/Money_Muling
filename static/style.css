@@ -41,6 +41,7 @@ body.light .graph-section { border-right: 1px solid #ddd; }
 body.light .kpi, body.light .panel { background: #ffffff; color: #111; border: 1px solid #ddd; }
 body.light .file-label { background: #e5e7eb; color: #111; }
 
+<<<<<<< HEAD
 /* Floating Text Styles */
 .floating-text-container {
     position: absolute;
@@ -78,3 +79,157 @@ body.light .file-label { background: #e5e7eb; color: #111; }
     0%, 100% { transform: translate(-50%, -48%); }
     50% { transform: translate(-50%, -52%); }
 }
+=======
+/* PANELS */
+.panel {
+    background: #111827;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.scroll {
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* BUTTONS */
+button {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.analyze-btn {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+}
+
+.analyze-btn:hover {
+    transform: translateY(-2px);
+}
+
+.download-btn {
+    background: linear-gradient(135deg, #059669, #047857);
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    color: white;
+    margin-top: 10px;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* UPLOAD */
+.upload-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.upload-box input[type="file"] {
+    display: none;
+}
+
+.file-label {
+    background: #1f2937;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #374151;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+}
+
+.file-label:hover {
+    background: #334155;
+}
+
+/* NETFLIX LOADER */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.loader-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.loader-text {
+    font-size: 26px;
+    letter-spacing: 3px;
+    color: #e50914;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.loader-bar {
+    width: 200px;
+    height: 4px;
+    background: #222;
+    overflow: hidden;
+    position: relative;
+}
+
+.loader-bar::before {
+    content: "";
+    position: absolute;
+    left: -40%;
+    width: 40%;
+    height: 100%;
+    background: #e50914;
+    animation: netflixLoad 1.2s infinite;
+}
+
+@keyframes netflixLoad {
+    0% { left: -40%; }
+    100% { left: 100%; }
+}
+/* =========================
+   LIGHT THEME
+========================= */
+
+body.light {
+    background: #f4f4f4;
+    color: #111;
+}
+
+body.light .header {
+    border-bottom: 1px solid #ddd;
+}
+
+body.light .graph-section {
+    border-right: 1px solid #ddd;
+}
+
+body.light .kpi,
+body.light .panel {
+    background: #ffffff;
+    color: #111;
+    border: 1px solid #ddd;
+}
+
+body.light .file-label {
+    background: #e5e7eb;
+    color: #111;
+}
+>>>>>>> 76165ca27047738e674d3291932fb3640e80af95

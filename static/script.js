@@ -110,5 +110,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+<<<<<<< HEAD
     document.getElementById("downloadBtn").addEventListener("click", function () { window.location.href = "/download"; });
 });
+=======
+    document.getElementById("downloadBtn").addEventListener("click", function () {
+        window.location.href = "/download";
+    });
+
+});
+>>>>>>> 76165ca27047738e674d3291932fb3640e80af95
